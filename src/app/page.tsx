@@ -68,19 +68,19 @@ export default function Home() {
     }
   };
 
-  const updatePreview = () => {
-    if (iframeRef.current && generatedCode) {
-      const iframe = iframeRef.current;
-      const doc = iframe.contentDocument || iframe.contentWindow?.document;
-      if (doc) {
-        doc.open();
-        doc.write(generatedCode);
-        doc.close();
-      }
-    }
-  };
-
   useEffect(() => {
+    const updatePreview = () => {
+      if (iframeRef.current && generatedCode) {
+        const iframe = iframeRef.current;
+        const doc = iframe.contentDocument || iframe.contentWindow?.document;
+        if (doc) {
+          doc.open();
+          doc.write(generatedCode);
+          doc.close();
+        }
+      }
+    };
+
     updatePreview();
   }, [generatedCode]);
 
@@ -163,7 +163,7 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="text-sm text-silver mb-2">
-                    Hi! I'm Vern, your AI game builder. I can help you create interactive games using HTML, CSS, and JavaScript.
+                    Hi! I&apos;m Vern, your AI game builder. I can help you create interactive games using HTML, CSS, and JavaScript.
                   </p>
                   <p className="text-xs text-silver-dark">
                     Try asking me to create a Snake game, Tetris, or any other game you have in mind!
